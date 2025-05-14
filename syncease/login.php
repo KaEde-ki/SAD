@@ -43,9 +43,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <title>Login</title>
     <style>
-        body { font-family: Arial, sans-serif; }
-        .container { width: 300px; margin: 50px auto; }
-        .message { color: red; text-align: center; }
+        body { 
+            font-family: Arial, sans-serif; 
+        }
+        .container {
+             width: 300px; margin: 50px auto; 
+            }
+        .message {
+             color: red; text-align: center; 
+            }
+        #sign_up {
+            margin-top: 2rem;
+        }
+        #log_in{
+            margin-top: 10px;
+            margin-left: 16rem;
+            padding:  15px;
+            background-color: #4e4a81;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        input{
+            width:20rem;
+            height: 20px;
+        }
     </style>
 </head>
 <body>
@@ -63,9 +86,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <label>Password:</label><br>
             <input type="password" name="password" ><br><br>
-            <button type="submit" name="action" value="Login"> Login</button>
-            Dont have an account?
+            <button type="submit" name="action" value="Login" id="log_in"> Login</button>
+            
+            <div id="sign_up">
+                Dont have an account?
             <button type="submit" name="action" value="signUp">Sign Up</button>
+            </div>
+            
         </form>
     </div>
 </body>
