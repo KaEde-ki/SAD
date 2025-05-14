@@ -73,15 +73,82 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <title>Add Task with Time</title>
     <style>
-        body { font-family: Arial, sans-serif; }
-        .container { width: 400px; margin: 50px auto; }
-        .message { color: green; text-align: center; }
-        .error { color: red; }
-        label { display: block; margin-top: 10px; }
-        input, select { width: 100%; padding: 8px; margin-top: 4px; }
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0;
+        }
+        .container { 
+            width: 400px; 
+            margin: 50px auto; 
+            max-width: 1500px;
+        }
+        .message { 
+            color: green; 
+            text-align: center; 
+        }
+        .error {
+             color: red; 
+        }
+
+        label {
+             display: block; 
+             margin-top: 10px;
+        }
+        input, select {
+             width: 100%; 
+             padding: 8px; 
+             margin-top: 4px; 
+        }
+        button {
+            margin-top: 2rem;
+            padding:  15px;
+            background-color: #4e4a81;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: blue;
+            transform: translateY(-2px);
+        }
+        a {
+            text-decoration: none;
+        }
+        .back {
+            display: inline-block;
+            background-color: lightblue;
+            color: white;
+            padding: 10px;
+            margin-top: 1rem;
+            margin-left: 2rem;
+            margin-right:6rem;
+            border-radius: 5px;
+        }
+
+        .back:hover {
+            background-color:lightgray;
+            color: black;
+        }
+        .header {
+            background-color: #4e4a81;
+            height: 80px;
+            margin: 0px;
+            padding-top: 10px;
+        }
+        .header p {
+            margin: 0;
+            color: white;
+            font-weight: bolder;
+            font-size: 40px;
+        }
     </style>
 </head>
 <body>
+<div class="header">
+        <p>SyncEase</p>
+</div>
+
     <div class="container">
         <h2>Add Task with Time</h2>
         <?php if ($message): ?>
@@ -117,10 +184,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label>End Time:<span class="error">*</span></label>
             <input type="time" name="end_time" required>
 
+            <div class="back">
+                <a href="dashboard.php">Back to Dashboard</a>
+            </div>
             <button type="submit">Add Task</button>
+            
         </form>
 
-        <p><a href="dashboard.php">Back to Dashboard</a></p>
+        
     </div>
 </body>
 </html>
